@@ -27,7 +27,7 @@ function t
   if tmux list-sessions &>/dev/null
     tmux attach
   else
-    tmux new-session
+    tmux
   end
 end
 
