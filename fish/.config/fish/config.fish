@@ -3,6 +3,8 @@ if status is-interactive
     set -U fish_autosuggestion_enabled 1
     set -U fish_term24bit 1
 end
+
+#yazi
 function y
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
 	yazi $argv --cwd-file="$tmp"
@@ -11,12 +13,24 @@ function y
 	end
 	rm -f -- "$tmp"
 end
+
+#fzf for cd
 function fcd
     set dir (find . -type d | fzf)
     if test -n "$dir"
         cd "$dir"
     end
 end
+
+#calling tmux
+function t
+  if tmux list-sessions &>/dev/null
+    tmux attach
+  else
+    tmux new-session
+  end
+end
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias v='nvim'
