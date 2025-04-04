@@ -40,3 +40,5 @@ alias gc="git commit -m"
 alias gp="git push"
 alias gl="git pull --rebase"
 alias nf='fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {+})"'
+
+zoxide init --cmd cd fish | source
