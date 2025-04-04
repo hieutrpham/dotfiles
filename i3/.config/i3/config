@@ -25,6 +25,8 @@ exec_always --no-startup-id nitrogen --restore
 #remap capslock to escape
 exec_always --no-startup-id "setxkbmap -option caps:escape"
 
+#gammastep to manage night light
+exec_always --no-startup-id gammastep -l 60.1:24.6 -t 6500:3500
 workspace 10 output HDMI-A-0
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
