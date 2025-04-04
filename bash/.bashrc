@@ -1,6 +1,7 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias v='nvim'
+alias vi='nvim'
 alias gs="git status"
 alias ga="git add ."
 alias gc="git commit -m"
