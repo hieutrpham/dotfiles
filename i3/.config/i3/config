@@ -14,15 +14,16 @@ exec --no-startup-id ~/.screenlayout/portrait.sh
 exec_always --no-startup-id picom --daemon --config ~/.config/picom/picom.conf
 
 #for wallpapers
-exec_always --no-startup-id nitrogen --restore
+exec --no-startup-id nitrogen --restore
 
 #remap capslock to escape
-exec_always --no-startup-id "setxkbmap -option caps:escape"
+exec --no-startup-id setxkbmap -option caps:escape
 
 #toggle keyboard us and fi
 exec_always --no-startup-id "setxkbmap -layout us,fi -option grp:win_space_toggle"
+
 #gammastep to manage night light
-exec_always --no-startup-id gammastep -l 60.1:24.6 -t 6500:3500
+exec --no-startup-id gammastep -l 60.1:24.6 -t 6500:3500
 
 workspace 10 output HDMI-A-0
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -59,7 +60,7 @@ bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym $mod+esc exec --no-startup-id rofi -show combi
+bindsym $mod+Esc exec --no-startup-id rofi -show combi
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # change focus
@@ -232,5 +233,7 @@ client.urgent            $peach    $base  $peach   $overlay0  $peach
 client.placeholder       $overlay0 $base  $text    $overlay0  $overlay0
 client.background        $base
 
-hide_edge_borders both
-for_window [class="^.*"] border pixel 0
+hide_edge_borders smart
+# for_window [class="^.*"] border pixel 0
+for_window [class="edge"] border pixel 0
+for_window [class="kitty"] border pixel 0
