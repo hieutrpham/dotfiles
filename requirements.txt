@@ -14,7 +14,6 @@ firefox 136.0.4-1
 fish 4.0.1-2
 fzf 0.60.3-1
 gammastep 2.0.11-1
-ghostty 1.1.3-1
 git 2.49.0-1
 grub 2:2.12.r260.gaae2ea61-1
 gst-plugin-pipewire 1:1.4.1-1
