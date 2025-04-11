@@ -36,4 +36,4 @@ echo "TPM installed successfully!"
 echo "Now opening tmux session and installing plugins..."
 
 #install edge
-yay -S microsoft-edge-stable-bin
+yay -S microsoft-edge-stable-bin --noconfirm
