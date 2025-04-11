@@ -3,7 +3,6 @@
 #install from requirement list
 sudo pacman -S --needed --noconfirm $(cat requirements.txt | awk '{print $1}')
 
-#stow dotfiles
 stow */
 
 #run install script

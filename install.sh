@@ -30,10 +30,9 @@ if [ -d "$TPM_DIR" ]; then
 else
   echo "Installing Tmux Plugin Manager (TPM)..."
   git clone https://github.com/tmux-plugins/tpm $TPM_DIR
+  echo "TPM installed successfully!"
 fi
 
-echo "TPM installed successfully!"
-echo "Now opening tmux session and installing plugins..."
 
 #install edge
 yay -S microsoft-edge-stable-bin --noconfirm
