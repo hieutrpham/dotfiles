@@ -37,7 +37,6 @@ linux-firmware 20250311.b69d4b74-3
 linux-headers 6.13.8.arch1-1
 man-db 2.13.0-1
 man-pages 6.13-1
-microsoft-edge-stable-bin 134.0.3124.95-1
 mtools 1:4.0.48-1
 nano 8.3-1
 neovim 0.11.0-2
@@ -84,8 +83,6 @@ xorg-xinit 1.4.4-1
 xorg-xrandr 1.5.3-1
 xss-lock 0.3.0.r30.gac39fdc-1
 xterm 397-2
-yay 12.4.2-1
-yay-debug 12.4.2-1
 yazi 25.3.2-1
 zoxide 0.9.7-1
 zram-generator 1.2.1-1

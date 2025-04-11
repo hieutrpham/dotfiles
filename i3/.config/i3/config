@@ -51,6 +51,9 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+popup_during_fullscreen all
+focus_follows_mouse no
+mouse_warping none
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
@@ -58,7 +61,7 @@ tiling_drag modifier titlebar
 # start a terminal
 bindsym $mod+Return exec kitty
 bindsym $mod+n exec thunar
-bindsym $mod+w exec microsoft-edge-stable
+bindsym $mod+m exec microsoft-edge-stable
 # kill focused window
 bindsym $mod+q kill
 
@@ -102,7 +105,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-#bindsym $mod+w layout tabbed
+bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -240,4 +243,5 @@ client.background        $base
 hide_edge_borders smart
 # for_window [class="^.*"] border pixel 0
 for_window [class="edge"] border pixel 0
+for_window [class="firefox"] border pixel 0
 for_window [class="kitty"] border pixel 0
