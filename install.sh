@@ -51,6 +51,24 @@ STOW_LIST=(
   "yazi"
   )
 
+TO_DELETE=(
+  "$HOME/.bashrc"
+  "$HOME/.config/i3/config"
+  )
+
+read -p "This will delete ${TO_DELETE[*]}. Continue? (y/N) " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  for i in "${TO_DELETE[@]}"; do
+    if [ -e "$i" ]; then
+      echo "Deleting: $i"
+      rm -rf "$i"
+    else
+      echo "Warning: '$i' not found." >&2
+    fi
+  done
+fi
+
 for i in "${STOW_LIST[@]}"; do
-  stow --adopt "$i"
+  echo "Stowing $i"
+  stow "$i"
 done
