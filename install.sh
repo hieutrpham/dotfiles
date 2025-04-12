@@ -34,9 +34,8 @@ else
   echo "TPM installed successfully!"
 fi
 
-
 #install edge
-yay -S microsoft-edge-stable-bin --noconfirm
+yay -S --needed --noconfirm microsoft-edge-stable-bin
 
 #create symlinks using stow
 STOW_LIST=(
