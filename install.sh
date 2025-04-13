@@ -39,15 +39,7 @@ yay -S --needed --noconfirm microsoft-edge-stable-bin
 
 #create symlinks using stow
 STOW_LIST=(
-  "nvim"
-  "fish"
-  "bash"
-  "i3"
-  "i3status"
-  "kitty"
-  "picom"
-  "tmux"
-  "yazi"
+  "nvim" "fish" "bash" "i3" "i3status" "kitty" "picom" "tmux" "yazi"
   )
 
 TO_DELETE=(
@@ -55,7 +47,7 @@ TO_DELETE=(
   "$HOME/.config/i3/config"
   )
 
-read -p "This will delete ${TO_DELETE[*]}. Continue? (y/N) " -n 1 -r
+read -p "This will delete ${TO_DELETE[*]} Continue? (y/N) " -n 1 -r
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   for i in "${TO_DELETE[@]}"; do
     if [ -e "$i" ]; then
