@@ -31,6 +31,7 @@ require("lazy").setup({
 	require("plugins.undotree"),
 	require("plugins.noice"),
 	require("plugins.neotree"),
+	require("plugins.42header"),
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
