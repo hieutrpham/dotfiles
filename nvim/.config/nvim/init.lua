@@ -29,7 +29,7 @@ require("lazy").setup({
 	require("kickstart.plugins.autopairs"),
 	require("plugins.vim_tmux"),
 	require("plugins.undotree"),
-	require("plugins.noice"),
+	-- require("plugins.noice"),
 	require("plugins.neotree"),
 	require("plugins.42header"),
 }, {

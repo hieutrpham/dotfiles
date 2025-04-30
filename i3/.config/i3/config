@@ -38,7 +38,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 exec --no-startup-id qbittorrent
-exec --no-startup-id microsoft-edge-stable
+exec --no-startup-id firefox
 exec --no-startup-id kitty
 
 # Use pactl to adjust volume in PulseAudio.
@@ -61,7 +61,7 @@ tiling_drag modifier titlebar
 # start a terminal
 bindsym $mod+Return exec kitty
 bindsym $mod+n exec thunar
-bindsym $mod+m exec microsoft-edge-stable
+bindsym $mod+m exec firefox
 # kill focused window
 bindsym $mod+q kill
 
