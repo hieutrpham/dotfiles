@@ -39,7 +39,7 @@ yay -S --needed --noconfirm microsoft-edge-stable-bin
 
 #create symlinks using stow
 STOW_LIST=(
-  "nvim" "fish" "bash" "i3" "i3status" "kitty" "picom" "tmux" "yazi"
+  "nvim" "fish" "bash" "i3" "i3status" "kitty" "picom" "tmux" "yazi" "rofi"
   )
 
 TO_DELETE=(
