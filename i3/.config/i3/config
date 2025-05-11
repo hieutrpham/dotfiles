@@ -7,10 +7,10 @@ font pango:0xProto Nerd Font 8
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
-#setup for dual monitor using arandr
+#setup for dual monitor using arandr WARN: only for dual monitor setup
 exec --no-startup-id ~/.screenlayout/portrait.sh
 
-#picom to set transparent background
+#picom to set transparent background. WARN: careful with different hardware picom can brick
 exec_always --no-startup-id picom --daemon --config ~/.config/picom/picom.conf
 
 #for wallpapers
@@ -25,6 +25,7 @@ exec_always --no-startup-id "setxkbmap -layout us,fi -option grp:win_space_toggl
 #gammastep to manage night light
 exec --no-startup-id gammastep -l 60.1:24.6 -t 6500:3500
 
+# WARN: optional
 workspace 10 output HDMI-A-0
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
