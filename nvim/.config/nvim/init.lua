@@ -14,6 +14,7 @@ require("lazy").setup({
 	"tpope/vim-sleuth",
 	"tpope/vim-obsession",
 	require("plugins.harpoon"),
+	require("plugins.love2d"),
 	require("kickstart.plugins.gitsigns"),
 	require("plugins.fugitive"),
 	require("plugins.whichkey"),
