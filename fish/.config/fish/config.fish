@@ -42,6 +42,7 @@ alias gl="git pull --rebase"
 alias nf='fzf -m --preview="bat --style=numbers --color=always {}" --bind "enter:become(nvim {+})"'
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 alias blue='bluetoothctl'
+alias cat='bat'
 
 zoxide init --cmd cd fish | source
 set -gx EDITOR nvim

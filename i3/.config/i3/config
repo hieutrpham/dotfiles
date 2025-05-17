@@ -39,7 +39,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 exec --no-startup-id qbittorrent
-exec --no-startup-id firefox
+# exec --no-startup-id firefox
 exec --no-startup-id kitty
 
 # Use pactl to adjust volume in PulseAudio.
