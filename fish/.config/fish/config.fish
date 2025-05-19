@@ -4,6 +4,8 @@ if status is-interactive
     set -U fish_term24bit 1
 end
 
+fish_config prompt choose arrow
+
 #yazi
 function y
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
