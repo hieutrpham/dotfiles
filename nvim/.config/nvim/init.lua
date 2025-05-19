@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	"tpope/vim-sleuth",
 	"tpope/vim-obsession",
+	require("kickstart.plugins.debug"),
 	require("plugins.harpoon"),
 	require("plugins.love2d"),
 	require("kickstart.plugins.gitsigns"),

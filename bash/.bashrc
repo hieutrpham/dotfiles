@@ -9,9 +9,9 @@ alias gp="git push"
 alias gl="git pull --rebase"
 alias nf='fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {+})"'
 # Add this at the end of ~/.bashrc
-if [[ -x $(which fish) ]]; then
-    exec fish
-fi
+# if [[ -x $(which fish) ]]; then
+#     exec fish
+# fi
 # fcd() {
 #     local dir
 #     dir=$(find . -type d | fzf)
