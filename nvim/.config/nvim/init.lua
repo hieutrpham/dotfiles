@@ -11,7 +11,7 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	"tpope/vim-sleuth",
+	-- "tpope/vim-sleuth",
 	"tpope/vim-obsession",
 	require("kickstart.plugins.debug"),
 	require("plugins.harpoon"),

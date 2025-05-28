@@ -21,6 +21,7 @@ window {
     border: 3px;
     border-color: @border-col;
     background-color: @bg-col;
+	border-radius: 5px;
 }
 
 mainbox {
@@ -52,6 +53,7 @@ entry {
     margin: 20px 0px 0px 10px;
     text-color: @fg-col;
     background-color: @bg-col;
+	cursor: pointer;
 }
 
 listview {
