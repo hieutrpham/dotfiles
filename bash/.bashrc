@@ -12,10 +12,10 @@ alias nf='fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {+}
 # if [[ -x $(which fish) ]]; then
 #     exec fish
 # fi
-# fcd() {
-#     local dir
-#     dir=$(find . -type d | fzf)
-#     if [[ -n "$dir" ]]; then
-#         cd "$dir" || return 1
-#     fi
-# }
+fcd() {
+    local dir
+    dir=$(find . -type d | fzf)
+    if [[ -n "$dir" ]]; then
+        cd "$dir" || return 1
+    fi
+}

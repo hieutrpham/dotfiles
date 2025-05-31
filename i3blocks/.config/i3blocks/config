@@ -1,0 +1,20 @@
+[RAM]
+label=󰍛 
+command=free -h | awk '$1 == "Mem:" {print $3 "/" $2}'
+interval=30
+color=#ffffff
+
+[weather]
+command=curl -Ss 'https://wttr.in/helsinki?format=2' | sed 's/  //'
+interval=3600
+
+# Query my default IP address only on startup
+[ip]
+command=hostname -i | awk '{ print "IP:" $1 }'
+interval=once
+color=#91E78B
+
+# Update time every 5 seconds
+[time]
+command=date '+%Y-%m-%d %H:%M'
+interval=60
