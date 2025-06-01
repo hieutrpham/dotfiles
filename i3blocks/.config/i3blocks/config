@@ -2,17 +2,18 @@
 label= 
 command=df -h | grep "/dev/" | head -1 | awk '{print $3 "/" $2}'
 interval=3600
-color=#ebc4bd
+color=#cdb4db
 
 [RAM]
 label=󰍛 
 command=free -h | awk '$1 == "Mem:" {print $3 "/" $2}'
 interval=30
-color=#1ff7fa
+color=#1fffff
 
 [weather]
 command=curl -Ss 'https://wttr.in/helsinki?format=2' | sed 's/  //'
 interval=900
+color=#1ffc8d
 
 # Query my default IP address only on startup
 [ip]
@@ -24,4 +25,4 @@ color=#91E78B
 [time]
 command=date '+%Y-%m-%d %H:%M'
 interval=60
-color=#ffffff
+color=#e9c46a
