@@ -4,7 +4,7 @@ echo audio test
 # Get a list of available audio sinks (output devices)
 # We extract the name and description for dmenu
 # The 'Name:' field is the unique identifier for pactl set-default-sink
-sink_info=$(pactl list sinks | awk '/Name:/{name=$2} /Description:/{print name "("$0")"}' | sed 's/Description: //')
+sink_info=$(pactl list sinks | awk '/Name:/{name=$2} /Description:/{print name " ( " $0 " ) "}' | sed 's/Description: //')
 
 # Use dmenu to let the user choose a sink
 selected_sink_line=$(echo -e "$sink_info" | dmenu -i -l 10 -p "Select audio output:")

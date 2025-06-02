@@ -23,6 +23,7 @@ color=#91E78B
 
 # Update time every 5 seconds
 [time]
+label= 
 command=date '+%Y-%m-%d %H:%M'
 interval=60
 color=#e9c46a
