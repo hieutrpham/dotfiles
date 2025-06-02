@@ -59,6 +59,9 @@ mouse_warping none
 # or left-clicking anywhere into the window while holding the floating modifier.
 tiling_drag modifier titlebar
 
+# audio switcher
+bindsym $mod+o exec --no-startup-id ~/.local/scripts/audio_switcher.sh
+
 # start a terminal
 bindsym $mod+Return exec kitty
 bindsym $mod+n exec thunar
