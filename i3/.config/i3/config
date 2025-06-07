@@ -2,6 +2,7 @@ set $mod Mod4
 set $term kitty
 set $browser firefox
 gaps inner 5px
+smart_gaps on
 
 set $rosewater #f5e0dc
 set $flamingo  #f2cdcd
@@ -67,7 +68,6 @@ exec_always --no-startup-id "setxkbmap -layout us,fi -option grp:win_space_toggl
 exec --no-startup-id gammastep -l 60.1:24.6 -t 6500:3500
 
 exec --no-startup-id $term
-exec --no-startup-id $browser
 
 exec --no-startup-id qbittorrent
 for_window [class="qBittorrent"] move workspace 3
@@ -75,7 +75,7 @@ for_window [class="qBittorrent"] move workspace 3
 # dropdown scratchpad
 exec --no-startup-id $term --name dropdown -e tmux
 for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 1000 1000
+for_window [instance="dropdown"] resize set 960 960
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pixel 5
 # binding for scratchpad
@@ -133,23 +133,11 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+t split h
@@ -211,28 +199,15 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -261,7 +236,3 @@ client.background        $base
 
 hide_edge_borders smart
 for_window [class="^.*"] border pixel 1
-# for_window [class="edge"] border pixel 0
-# for_window [class="firefox"] border pixel 0
-# for_window [class="kitty"] border pixel 0
-# for_window [class="vlc"] border pixel 0
