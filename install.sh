@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo "Install requirements"
 sudo pacman -S --needed --noconfirm $(cat requirements.txt | awk '{print $1}')

@@ -8,10 +8,8 @@ alias gc="git commit -m"
 alias gp="git push"
 alias gl="git pull --rebase"
 alias nf='fzf -m --preview="bat --color=always {}" --bind "enter:become(nvim {+})"'
-# Add this at the end of ~/.bashrc
-# if [[ -x $(which fish) ]]; then
-#     exec fish
-# fi
+
+#find directory using fzf and cd into it
 fcd() {
     local dir
     dir=$(find . -type d | fzf)
@@ -19,3 +17,5 @@ fcd() {
         cd "$dir" || return 1
     fi
 }
+
+set -o vi
