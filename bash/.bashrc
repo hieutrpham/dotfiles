@@ -1,3 +1,6 @@
+RED=$(tput setaf 9)
+RESET=$(tput setaf sgr0)
+CYAN=$(tput setaf 39)
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias v='nvim'
@@ -17,5 +20,25 @@ fcd() {
         cd "$dir" || return 1
     fi
 }
+
+color() {
+	for c in {0..255}; do
+		tput setaf $c
+		echo -n "$c "
+	done
+	tput sgr0
+	echo
+}
+parse_git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /';
+}
+
+hostname_if_ssh(){
+  if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    echo "[$(hostname)] "
+  fi
+}
+
+export PS1="${CYAN}$(hostname_if_ssh)\w ${RED}$(parse_git_branch)${RESET}🚀 "
 
 set -o vi
