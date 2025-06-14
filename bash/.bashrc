@@ -1,6 +1,10 @@
-RED=$(tput setaf 9)
-RESET=$(tput setaf sgr0)
-CYAN=$(tput setaf 39)
+red=$(tput setaf 9)
+cyan=$(tput setaf 39)
+green=$(tput setaf 2)
+blue=$(tput setaf 4)
+pink=$(tput setaf 225)
+reset=$(tput setaf sgr0)
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias v='nvim'
@@ -29,6 +33,7 @@ color() {
 	tput sgr0
 	echo
 }
+
 parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /';
 }
@@ -39,6 +44,6 @@ hostname_if_ssh(){
   fi
 }
 
-export PS1="${CYAN}$(hostname_if_ssh)\w ${RED}$(parse_git_branch)${RESET}🚀 "
-
+# export PS1="${cyan}$(hostname_if_ssh)\w ${red}$(parse_git_branch)${reset}🚀 "
+export   PS1='\[$red\]\u\[$reset\]@\[$pink\]\h\[$reset\]:\[$blue\]\w\[$reset\] 🚀 '
 set -o vi
