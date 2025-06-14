@@ -1,11 +1,11 @@
 [Disk]
-label= 
+label=💾 
 command=df -h | grep "/dev/" | head -1 | awk '{print $3 "/" $2}'
 interval=3600
 color=#cdb4db
 
 [RAM]
-label=󰍛 
+label=📝 
 command=free -h | awk '$1 == "Mem:" {print $3 "/" $2}'
 interval=30
 color=#1fffff
@@ -15,15 +15,9 @@ command=curl -Ss 'https://wttr.in/helsinki?format=4' | sed 's/helsinki: //; s/  
 interval=900
 color=#1ffc8d
 
-# Query my default IP address only on startup
-[ip]
-command=hostname -i | awk '{ print "IP:" $1 }'
-interval=once
-color=#91E78B
-
 # Update time every 5 seconds
 [time]
-label= 
+label=📆 
 command=date '+%Y-%m-%d %H:%M'
 interval=60
 color=#e9c46a
