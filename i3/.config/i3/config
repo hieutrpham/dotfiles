@@ -67,12 +67,12 @@ exec_always --no-startup-id "setxkbmap -layout us,fi -option grp:win_space_toggl
 #gammastep to manage night light
 exec --no-startup-id gammastep -l 60.1:24.6 -t 6500:3500
 
-exec --no-startup-id $term
+exec --no-startup-id $term -e tmux
 
 exec --no-startup-id qbittorrent
 
 # dropdown scratchpad
-exec --no-startup-id $term --name dropdown -e tmux
+exec --no-startup-id $term --name dropdown
 for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 960 960
 for_window [instance="dropdown"] move scratchpad
