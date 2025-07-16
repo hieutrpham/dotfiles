@@ -100,6 +100,12 @@ vim.opt.scrolloff = 10
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+-- adjusting window sizes
+vim.keymap.set("n", "<leader>k", "10<C-w>+", { desc = "Increase window height by 10" })
+vim.keymap.set("n", "<leader>j", "10<C-w>-", { desc = "Decrease window height by 10" })
+vim.keymap.set("n", "<leader>H", "10<C-w><", { desc = "Decrease window width by 10" })
+vim.keymap.set("n", "<leader>l", "10<C-w>>", { desc = "Increase window width by 10" })
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
