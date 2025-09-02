@@ -119,7 +119,7 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 -- is not what someone will guess without a bit more experience.
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
-vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+-- vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 --
 --  See `:help wincmd` for a list of all window commands
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
@@ -132,5 +132,19 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
 	callback = function()
 		vim.highlight.on_yank()
+	end,
+})
+--
+-- Create an autogroup to keep related autocommands together and prevent duplicates
+local terminal_augroup = vim.api.nvim_create_augroup("TerminalSettings", { clear = true })
+
+-- Set relativenumber for any buffer that is opened as a terminal
+vim.api.nvim_create_autocmd("TermOpen", {
+	group = terminal_augroup,
+	callback = function()
+		-- Use vim.opt_local to set the option for the current buffer only
+		vim.opt_local.relativenumber = true
+		-- You may also want to set number to true for a hybrid view
+		vim.opt_local.number = true
 	end,
 })
