@@ -3,6 +3,7 @@
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.g.netrw_liststyle = 3
 -- moving in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -31,9 +32,9 @@ vim.keymap.set({ "n", "v" }, "<leader>d", '"_d')
 
 vim.keymap.set("n", "<leader>e", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Quick Replace" })
 
-vim.keymap.set("n", "<leader>pv", function()
-	MiniFiles.open()
-end, { noremap = true, silent = true })
+-- vim.keymap.set("n", "<leader>pv", function()
+-- 	MiniFiles.open()
+-- end, { noremap = true, silent = true })
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
@@ -138,13 +139,23 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- Create an autogroup to keep related autocommands together and prevent duplicates
 local terminal_augroup = vim.api.nvim_create_augroup("TerminalSettings", { clear = true })
 
--- Set relativenumber for any buffer that is opened as a terminal
 vim.api.nvim_create_autocmd("TermOpen", {
 	group = terminal_augroup,
 	callback = function()
-		-- Use vim.opt_local to set the option for the current buffer only
 		vim.opt_local.relativenumber = true
-		-- You may also want to set number to true for a hybrid view
+		vim.opt_local.number = true
+	end,
+})
+
+-- Create an augroup to manage netrw settings
+local netrw_augroup = vim.api.nvim_create_augroup("NetrwSettings", { clear = true })
+
+-- Set relativenumber when a netrw buffer is opened
+vim.api.nvim_create_autocmd("FileType", {
+	group = netrw_augroup,
+	pattern = "netrw",
+	callback = function()
+		vim.opt_local.relativenumber = true
 		vim.opt_local.number = true
 	end,
 })
