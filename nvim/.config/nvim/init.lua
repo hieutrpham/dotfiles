@@ -17,9 +17,9 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	"tpope/vim-obsession",
 	-- require("plugins.harpoon"),
-	require("plugins.love2d"),
+	-- require("plugins.love2d"),
 	require("kickstart.plugins.gitsigns"),
-	require("kickstart.plugins.autopairs"),
+	-- require("kickstart.plugins.autopairs"),
 	require("plugins.fugitive"),
 	require("plugins.whichkey"),
 	require("plugins.telescope"),

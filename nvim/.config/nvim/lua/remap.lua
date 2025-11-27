@@ -8,6 +8,7 @@ vim.g.netrw_liststyle = 3
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+vim.diagnostic.enable(false)
 vim.keymap.set("n", "J", "mzJ`z")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -135,16 +136,18 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
---
--- Create an autogroup to keep related autocommands together and prevent duplicates
+
+local function set_linenum()
+	vim.opt_local.relativenumber = true
+	vim.opt_local.number = true
+end
+
+-- setting relativenumber in terminal buffer
 local terminal_augroup = vim.api.nvim_create_augroup("TerminalSettings", { clear = true })
 
 vim.api.nvim_create_autocmd("TermOpen", {
 	group = terminal_augroup,
-	callback = function()
-		vim.opt_local.relativenumber = true
-		vim.opt_local.number = true
-	end,
+	callback = set_linenum,
 })
 
 -- Create an augroup to manage netrw settings
@@ -153,9 +156,6 @@ local netrw_augroup = vim.api.nvim_create_augroup("NetrwSettings", { clear = tru
 -- Set relativenumber when a netrw buffer is opened
 vim.api.nvim_create_autocmd("FileType", {
 	group = netrw_augroup,
-	pattern = "netrw",
-	callback = function()
-		vim.opt_local.relativenumber = true
-		vim.opt_local.number = true
-	end,
+	pattern = { "netrw", "man" },
+	callback = set_linenum,
 })
