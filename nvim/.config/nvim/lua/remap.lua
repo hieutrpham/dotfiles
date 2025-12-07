@@ -53,6 +53,7 @@ vim.opt.shiftwidth = 4
 vim.opt.incsearch = true
 vim.opt.showmode = false
 
+vim.opt.iskeyword = "@,48-57,192-255"
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -107,6 +108,16 @@ vim.keymap.set("n", "<leader>k", "10<C-w>+", { desc = "Increase window height by
 vim.keymap.set("n", "<leader>j", "10<C-w>-", { desc = "Decrease window height by 10" })
 vim.keymap.set("n", "<leader>H", "10<C-w><", { desc = "Decrease window width by 10" })
 vim.keymap.set("n", "<leader>l", "10<C-w>>", { desc = "Increase window width by 10" })
+
+-- moving between buffers
+vim.keymap.set("n", "H", ":bprev<CR>", { desc = "Prev buffer", noremap = false })
+vim.keymap.set("n", "L", ":bnext<CR>", { desc = "Next buffer", noremap = false })
+
+-- navigate in insert mode
+vim.keymap.set("i", "<C-b>", "<Left>", { desc = "Move left" })
+vim.keymap.set("i", "<C-f>", "<Right>", { desc = "Move right" })
+vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move down" })
+vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move up" })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
