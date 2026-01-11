@@ -62,7 +62,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id setxkbmap -option caps:escape
 
 #toggle keyboard us and fi
-exec_always --no-startup-id "setxkbmap -layout us,fi -option grp:win_space_toggle"
+# exec_always --no-startup-id "setxkbmap -layout us,fi -option grp:win_space_toggle"
 
 #gammastep to manage night light
 exec --no-startup-id gammastep -l 60.1:24.6 -t 6500:3500

@@ -3,7 +3,7 @@ return {
 		"folke/tokyonight.nvim",
 		priority = 1000,
 		init = function()
-			vim.cmd.colorscheme("gruvdark")
+			vim.cmd.colorscheme("moonbow")
 			vim.cmd.hi("Comment gui=none")
 		end,
 		opts = {
@@ -13,6 +13,9 @@ return {
 				floats = "transparent",
 			},
 		},
+	},
+	{
+		"arturgoms/moonbow.nvim",
 	},
 	{
 		"darianmorat/gruvdark.nvim",
