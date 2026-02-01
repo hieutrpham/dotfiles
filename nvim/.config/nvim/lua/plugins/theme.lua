@@ -3,7 +3,7 @@ return {
 		"folke/tokyonight.nvim",
 		priority = 1000,
 		init = function()
-			vim.cmd.colorscheme("moonbow")
+			vim.cmd.colorscheme("minicyan")
 			vim.cmd.hi("Comment gui=none")
 		end,
 		opts = {
@@ -14,9 +14,9 @@ return {
 			},
 		},
 	},
-	{
-		"arturgoms/moonbow.nvim",
-	},
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	{ "arturgoms/moonbow.nvim" },
+	{ "Shatur/neovim-ayu" },
 	{
 		"darianmorat/gruvdark.nvim",
 		priority = 1000,

@@ -53,7 +53,7 @@ vim.opt.shiftwidth = 4
 vim.opt.incsearch = true
 vim.opt.showmode = false
 
-vim.opt.iskeyword = "@,48-57,192-255"
+vim.opt.iskeyword = "_,@,48-57,192-255"
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -98,7 +98,7 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+-- vim.opt.scrolloff = 10
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`

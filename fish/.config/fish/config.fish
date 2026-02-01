@@ -33,6 +33,10 @@ function t
   end
 end
 
+function stremio
+	flatpak run com.stremio.Stremio &; flatpak run com.stremio.Service
+end
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias v='nvim'
