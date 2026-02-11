@@ -19,5 +19,8 @@ return {
 		integrations = {
 			diffview = true,
 		},
+		commit_editor = {
+			kind = "auto",
+		},
 	},
 }
