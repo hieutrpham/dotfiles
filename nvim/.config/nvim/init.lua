@@ -18,6 +18,7 @@ require("lazy").setup({
 	"tpope/vim-obsession",
 	"tpope/vim-rsi",
 	-- require("plugins.love2d"),
+	require("plugins.neogit"),
 	require("kickstart.plugins.gitsigns"),
 	-- require("kickstart.plugins.autopairs"),
 	require("plugins.fugitive"),

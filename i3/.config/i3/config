@@ -49,6 +49,7 @@ font pango:0xProto Nerd Font 8
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+exec --no-startup-id caffeine
 exec --no-startup-id caffeine-indicator
 #setup for dual monitor using arandr WARN: only for dual monitor setup
 exec --no-startup-id ~/.screenlayout/portrait.sh
