@@ -21,7 +21,6 @@ require("lazy").setup({
 	require("plugins.neogit"),
 	require("kickstart.plugins.gitsigns"),
 	-- require("kickstart.plugins.autopairs"),
-	require("plugins.fugitive"),
 	require("plugins.whichkey"),
 	require("plugins.telescope"),
 	require("plugins.lsp_config"),

@@ -12,9 +12,12 @@ return {
 		{ "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" },
 	},
 	opts = {
-		kind = "floating",
+		kind = "tab",
 		float = {
 			border = "rounded",
+		},
+		integrations = {
+			diffview = true,
 		},
 	},
 }
