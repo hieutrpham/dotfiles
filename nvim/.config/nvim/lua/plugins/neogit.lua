@@ -13,11 +13,13 @@ return {
 	},
 	opts = {
 		kind = "tab",
-		float = {
-			border = "rounded",
-		},
+		disable_line_numbers = false,
+		disable_relative_line_numbers = false,
 		integrations = {
 			diffview = true,
+		},
+		status = {
+			recent_commit_count = 50,
 		},
 		commit_editor = {
 			kind = "auto",

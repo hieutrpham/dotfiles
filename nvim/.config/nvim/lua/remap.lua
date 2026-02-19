@@ -15,8 +15,8 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- center search term
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+-- vim.keymap.set("n", "n", "nzzzv")
+-- vim.keymap.set("n", "N", "Nzzzv")
 
 -- paste without losing current buffer
 vim.keymap.set("x", "<leader>p", '"_dP')
@@ -110,19 +110,19 @@ vim.keymap.set("n", "<leader>H", "10<C-w><", { desc = "Decrease window width by 
 vim.keymap.set("n", "<leader>l", "10<C-w>>", { desc = "Increase window width by 10" })
 
 -- moving between buffers
-vim.keymap.set("n", "H", ":bprev<CR>", { desc = "Prev buffer", noremap = false })
-vim.keymap.set("n", "L", ":bnext<CR>", { desc = "Next buffer", noremap = false })
+-- vim.keymap.set("n", "H", ":bprev<CR>", { desc = "Prev buffer", noremap = false })
+-- vim.keymap.set("n", "L", ":bnext<CR>", { desc = "Next buffer", noremap = false })
 
 -- navigate in insert mode
-vim.keymap.set("i", "<C-b>", "<Left>", { desc = "Move left" })
-vim.keymap.set("i", "<C-f>", "<Right>", { desc = "Move right" })
-vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move down" })
-vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move up" })
+-- vim.keymap.set("i", "<C-b>", "<Left>", { desc = "Move left" })
+-- vim.keymap.set("i", "<C-f>", "<Right>", { desc = "Move right" })
+-- vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move down" })
+-- vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move up" })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-vim.keymap.set("i", "jk", "<Esc>")
+-- vim.keymap.set("i", "jk", "<Esc>")
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
