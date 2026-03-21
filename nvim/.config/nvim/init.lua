@@ -19,6 +19,7 @@ require("lazy").setup({
 	"tpope/vim-rsi",
 	-- require("plugins.love2d"),
 	require("plugins.neogit"),
+	require("plugins.compile"),
 	require("kickstart.plugins.gitsigns"),
 	-- require("kickstart.plugins.autopairs"),
 	require("plugins.whichkey"),
@@ -33,7 +34,6 @@ require("lazy").setup({
 	-- require("plugins.vim_tmux"),
 	require("plugins.undotree"),
 	-- require("plugins.neotree"),
-	require("plugins.42header"),
 	require("plugins.markdown"),
 }, {
 	ui = {

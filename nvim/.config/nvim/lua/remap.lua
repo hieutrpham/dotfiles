@@ -18,6 +18,14 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- vim.keymap.set("n", "n", "nzzzv")
 -- vim.keymap.set("n", "N", "Nzzzv")
 
+-- compile mode keymap
+vim.keymap.set("n", "<leader>R", ":below Compile<CR>")
+vim.keymap.set("n", "<leader>r", ":below Recompile<CR>")
+
+-- upper/lower case
+vim.keymap.set("n", "<leader>U", "gUaw")
+vim.keymap.set("n", "<leader>u", "guaw")
+
 -- paste without losing current buffer
 vim.keymap.set("x", "<leader>p", '"_dP')
 
