@@ -23,8 +23,8 @@ vim.keymap.set("n", "<leader>R", ":below Compile<CR>")
 vim.keymap.set("n", "<leader>r", ":below Recompile<CR>")
 
 -- upper/lower case
-vim.keymap.set("n", "<leader>U", "gUaw")
-vim.keymap.set("n", "<leader>u", "guaw")
+vim.keymap.set("n", "<leader>U", "gUaw", { desc = "Uppercase word" })
+vim.keymap.set("n", "<leader>u", "guaw", { desc = "Lowercase word" })
 
 -- paste without losing current buffer
 vim.keymap.set("x", "<leader>p", '"_dP')

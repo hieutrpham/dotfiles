@@ -20,6 +20,8 @@ return {
 			bang_expansion = true,
 			focus_compilation_buffer = true,
 			use_circular_error_navigation = true,
+			recompile_no_fail = true,
+			auto_scroll = false,
 			-- clear_environment = true,
 		}
 	end,
