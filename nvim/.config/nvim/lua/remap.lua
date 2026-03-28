@@ -23,8 +23,8 @@ vim.keymap.set("n", "<leader>R", ":below Compile<CR>")
 vim.keymap.set("n", "<leader>r", ":below Recompile<CR>")
 
 -- upper/lower case
-vim.keymap.set("n", "<leader>U", "gUaw", { desc = "Uppercase word" })
-vim.keymap.set("n", "<leader>u", "guaw", { desc = "Lowercase word" })
+vim.keymap.set("n", "<leader>U", "gUawe", { desc = "Uppercase word" })
+vim.keymap.set("n", "<leader>u", "guawe", { desc = "Lowercase word" })
 
 -- paste without losing current buffer
 vim.keymap.set("x", "<leader>p", '"_dP')
@@ -133,8 +133,10 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- vim.keymap.set("i", "jk", "<Esc>")
 
 -- Diagnostic keymaps
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+-- vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
+vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "close buffer" })
+vim.keymap.set("n", "<leader>w", ":wa<CR>", { desc = "save all buffers" })
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.

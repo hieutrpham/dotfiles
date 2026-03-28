@@ -24,6 +24,7 @@ require("lazy").setup({
 	-- require("kickstart.plugins.autopairs"),
 	require("plugins.whichkey"),
 	require("plugins.telescope"),
+	require("plugins.debug"),
 	require("plugins.lsp_config"),
 	require("plugins.treesitter"),
 	require("plugins.treesitter-context"),
