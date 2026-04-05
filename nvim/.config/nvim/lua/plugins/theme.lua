@@ -1,4 +1,5 @@
 return {
+	-- { "rebelot/kanagawa.nvim" },
 	{
 		"folke/tokyonight.nvim",
 		priority = 1000,
@@ -14,20 +15,20 @@ return {
 			},
 		},
 	},
-	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-	{ "arturgoms/moonbow.nvim" },
-	{ "Shatur/neovim-ayu" },
-	{
-		"darianmorat/gruvdark.nvim",
-		priority = 1000,
-		opts = {
-			transparent = true,
-			styles = {
-				sidebars = "transparent",
-				floats = "transparent",
-			},
-		},
-	},
+	-- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+	-- { "arturgoms/moonbow.nvim" },
+	-- { "Shatur/neovim-ayu" },
+	-- {
+	-- 	"darianmorat/gruvdark.nvim",
+	-- 	priority = 1000,
+	-- 	opts = {
+	-- 		transparent = true,
+	-- 		styles = {
+	-- 			sidebars = "transparent",
+	-- 			floats = "transparent",
+	-- 		},
+	-- 	},
+	-- },
 	-- Highlight todo, notes, etc in comments
 	{
 		"folke/todo-comments.nvim",

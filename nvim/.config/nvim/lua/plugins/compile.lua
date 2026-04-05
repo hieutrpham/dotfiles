@@ -22,6 +22,7 @@ return {
 			use_circular_error_navigation = true,
 			recompile_no_fail = true,
 			auto_scroll = false,
+			auto_jump_to_first_error = true,
 			-- clear_environment = true,
 		}
 	end,
