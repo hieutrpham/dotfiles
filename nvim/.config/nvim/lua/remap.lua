@@ -4,15 +4,28 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.netrw_liststyle = 3
+
 -- moving in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- align texts with 2 columns
+vim.keymap.set("v", "<leader>a", ":!column -t -l2<CR>gv=")
 
 vim.diagnostic.enable(false)
 vim.keymap.set("n", "J", "mzJ`z")
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- paste from 0 and " register
+vim.keymap.set("n", "<leader>pp", '"0p', { desc = "Paste from 0 reg" })
+vim.keymap.set("n", "<leader>pd", '""p', { desc = 'Paste from " reg' })
+
+-- open netrw
+vim.keymap.set("n", "<leader>E", ":Ex<CR>")
+
+vim.keymap.set("n", "<leader>tt", ":ter ")
 
 -- center search term
 -- vim.keymap.set("n", "n", "nzzzv")
@@ -21,10 +34,9 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- compile mode keymap
 vim.keymap.set("n", "<leader>R", ":below Compile<CR>")
 vim.keymap.set("n", "<leader>r", ":below Recompile<CR>")
-
--- upper/lower case
-vim.keymap.set("n", "<leader>U", "gUawe", { desc = "Uppercase word" })
-vim.keymap.set("n", "<leader>u", "guawe", { desc = "Lowercase word" })
+vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "close buffer" })
+vim.keymap.set("n", "<leader>w", ":wa<CR>", { desc = "save all buffers" })
+vim.keymap.set("n", "<leader>wr", ":wa<CR>:below Recompile<CR>", { desc = "save all buffers" })
 
 -- paste without losing current buffer
 vim.keymap.set("x", "<leader>p", '"_dP')
@@ -37,7 +49,7 @@ end, { desc = "LSP Hover" })
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({ "n", "v" }, "<leader>d", '"_d')
+-- vim.keymap.set({ "n", "v" }, "<leader>d", '"_d')
 
 vim.keymap.set("n", "<leader>e", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Quick Replace" })
 
@@ -122,8 +134,8 @@ vim.keymap.set("n", "<leader>l", "10<C-w>>", { desc = "Increase window width by 
 -- vim.keymap.set("n", "L", ":bnext<CR>", { desc = "Next buffer", noremap = false })
 
 -- navigate in insert mode
--- vim.keymap.set("i", "<C-b>", "<Left>", { desc = "Move left" })
--- vim.keymap.set("i", "<C-f>", "<Right>", { desc = "Move right" })
+vim.keymap.set("i", "<C-b>", "<Left>", { desc = "Move left" })
+vim.keymap.set("i", "<C-f>", "<Right>", { desc = "Move right" })
 -- vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move down" })
 -- vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move up" })
 
@@ -135,8 +147,6 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Diagnostic keymaps
 -- vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 
-vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "close buffer" })
-vim.keymap.set("n", "<leader>w", ":wa<CR>", { desc = "save all buffers" })
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
