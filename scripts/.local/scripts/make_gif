@@ -5,5 +5,6 @@ output=$2
 palette="palette.png"
 # 1. Create a color palette file
 ffmpeg -i "$input" -vf "fps=10,scale=800:-1:flags=lanczos,palettegen" $palette
-# 2. Use the palette to create the GIF
-ffmpeg -i "$input" -i $palette -filter_complex "fps=10,scale=800:-1:flags=lanczos[x];[x][1:v]paletteuse" $output
+
+# 2. Use the palette to create the GIF. start at 1s and end at 18s
+ffmpeg -ss 1 -to 18 -i "$input" -i $palette -filter_complex "fps=10,scale=800:-1:flags=lanczos[x];[x][1:v]paletteuse" $output
