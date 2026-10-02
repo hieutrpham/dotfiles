@@ -17,14 +17,14 @@ return {
 	config = function()
 	  require("rose-pine").setup({
 		styles = {
-		  bold = false,
+		  bold = true,
 		  italic = false,
 		}
 	  })
 
 	  vim.cmd.colorscheme("rose-pine")
 
-	  vim.api.nvim_set_hl(0, "Comment", { italic = false })
+	  -- vim.api.nvim_set_hl(0, "Comment", { italic = false })
 	end
   },
   {

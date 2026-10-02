@@ -4,13 +4,13 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.netrw_liststyle = 3
+-- vim.o.autocomplete = true
+vim.o.autoindent = true
+vim.opt.confirm = true
 
 -- moving in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-
--- align texts with 2 columns
-vim.keymap.set("v", "<leader>a", ":!column -t -l2<CR>gv=")
 
 vim.diagnostic.enable(false)
 vim.keymap.set("n", "J", "mzJ`z")
@@ -24,8 +24,6 @@ vim.keymap.set("n", "<leader>pd", '""p', { desc = 'Paste from " reg' })
 
 -- open netrw
 vim.keymap.set("n", "<leader>E", ":Ex<CR>")
-
-vim.keymap.set("n", "<leader>tt", ":ter ")
 
 -- center search term
 -- vim.keymap.set("n", "n", "nzzzv")
@@ -73,7 +71,7 @@ vim.opt.shiftwidth = 4
 vim.opt.incsearch = true
 vim.opt.showmode = false
 
-vim.opt.iskeyword = "_,@,48-57,192-255"
+vim.opt.iskeyword = "@,48-57,192-255"
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
@@ -108,8 +106,8 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+-- vim.opt.list = true
+-- vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"

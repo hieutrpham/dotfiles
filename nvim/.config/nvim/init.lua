@@ -3,6 +3,7 @@ P = function(v)
 	return v
 end
 
+-- require('vim._core.ui2').enable()
 require("remap")
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -16,21 +17,20 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	"tpope/vim-obsession",
-	"tpope/vim-rsi",
 	"mbbill/undotree",
 	require("plugins.neogit"),
 	require("plugins.compile"),
 	require("kickstart.plugins.gitsigns"),
-	require("plugins.whichkey"),
+	-- require("plugins.whichkey"),
 	require("plugins.telescope"),
-	require("plugins.debug"),
+	-- require("plugins.debug"),
 	require("plugins.lsp_config"),
 	require("plugins.treesitter"),
 	require("plugins.theme"),
-	require("plugins.autoformat"),
+	-- require("plugins.autoformat"),
 	require("plugins.autocomplete"),
 	require("plugins.mini"),
-	require("plugins.markdown"),
+	-- require("plugins.markdown"),
 }, {
 	ui = {
 		icons = vim.g.have_nerd_font and {} or {},

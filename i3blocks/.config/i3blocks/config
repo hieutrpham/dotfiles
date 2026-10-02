@@ -10,11 +10,6 @@ command=free -h | awk '$1 == "Mem:" {print $3 "/" $2}'
 interval=30
 color=#1fffff
 
-[weather]
-command=curl -Ss 'https://wttr.in/helsinki?format=4' | sed 's/helsinki: //; s/  //'
-interval=900
-color=#1ffc8d
-
 # Update time every 5 seconds
 [time]
 label=📆 

@@ -123,10 +123,10 @@ return {
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 			local servers = {
-				-- ts_ls = {},
-				-- tailwindcss = {},
-				-- html = {},
-				-- cssls = {},
+				ts_ls = {},
+				tailwindcss = {},
+				html = {},
+				cssls = {},
 				clangd = {
 					cmd = {
 						"clangd",

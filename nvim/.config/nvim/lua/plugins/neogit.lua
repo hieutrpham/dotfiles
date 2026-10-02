@@ -19,7 +19,7 @@ return {
 			diffview = true,
 		},
 		status = {
-			recent_commit_count = 50,
+			recent_commit_count = 99999,
 		},
 		commit_editor = {
 			kind = "auto",

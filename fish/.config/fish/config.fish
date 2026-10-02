@@ -17,16 +17,6 @@ function fish_user_key_bindings
     fish_vi_key_bindings --no-erase insert
 end
 
-#yazi
-function y
-	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	yazi $argv --cwd-file="$tmp"
-	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-		builtin cd -- "$cwd"
-	end
-	rm -f -- "$tmp"
-end
-
 #fzf for cd
 function fcd
     set dir (find . -type d | fzf)
@@ -45,12 +35,14 @@ function t
 end
 
 function stremio
-	flatpak run com.stremio.Stremio &; flatpak run com.stremio.Service
+	flatpak run com.stremio.Stremio &> /dev/null;
+	flatpak run com.stremio.Service &> /dev/null;
 end
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias v='nvim'
+alias v='~/thirdparty/nvim-linux-x86_64.appimage'
+alias nv='NVIM_APPNAME=nvim_mini nvim'
 alias gs="git status"
 alias ga="git add ."
 alias gc="git commit -m"
@@ -63,7 +55,7 @@ abbr --add val valgrind --leak-check=full --track-origins=yes --show-leak-kinds=
 abbr --add make bear -- make
 
 export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
-export PATH="$PATH:/usr/lib"
+# export PATH="$PATH:/usr/lib"
 zoxide init --cmd cd fish | source
 set -gx EDITOR nvim
 fzf --fish | source

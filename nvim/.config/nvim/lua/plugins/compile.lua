@@ -1,8 +1,8 @@
 return {
 	"ej-shafran/compile-mode.nvim",
-	version = "^5.0.0",
+	-- version = "^5.0.0",
 	-- you can just use the latest version:
-	-- branch = "latest",
+	branch = "latest",
 	-- or the most up-to-date updates:
 	-- branch = "nightly",
 	dependencies = {
@@ -22,6 +22,7 @@ return {
 			use_circular_error_navigation = true,
 			recompile_no_fail = true,
 			auto_scroll = false,
+			max_lines = 2000;
 			-- auto_jump_to_first_error = true,
 			-- clear_environment = true,
 		}
