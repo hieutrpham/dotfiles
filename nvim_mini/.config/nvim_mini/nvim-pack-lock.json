@@ -1,0 +1,14 @@
+{
+  "plugins": {
+    "neovim": {
+      "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
+      "src": "https://github.com/rose-pine/neovim",
+      "version": "'main'"
+    },
+    "nvim-treesitter": {
+      "rev": "728e031f6b11d03d1f0708b7dc4fb0f1d9c8a137",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
+      "version": "'main'"
+    }
+  }
+}
