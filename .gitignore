@@ -1,1 +1,5 @@
 *.log
+/Session.vim
+/nvim/.config/nvim/Session.vim
+/nvim_mini/.config/nvim_mini/Session.vim
+/nvim_mini/.config/nvim_mini/Session.vim

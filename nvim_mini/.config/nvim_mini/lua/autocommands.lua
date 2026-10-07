@@ -45,3 +45,28 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "netrw", "man" },
 	callback = set_linenum,
 })
+
+-- vim.opt.grepprg = "rg --vimgrep --smart-case --hidden"
+-- vim.opt.grepformat = "%f:%l:%c:%m"
+-- vim.keymap.set("n", "<leader>g", function()
+-- 	vim.ui.input({ prompt = "Grep: " }, function(pattern)
+-- 		if pattern then
+-- 			vim.cmd("silent grep! " .. vim.fn.fnameescape(pattern))
+-- 			vim.cmd("copen")
+-- 		end
+-- 	end)
+-- end)
+--
+-- vim.keymap.set("n", "<leader>f", function()
+--     vim.ui.input({ prompt = "Find: " }, function(pattern)
+--         if not pattern or pattern == "" then return end
+--         local output = vim.fn.systemlist({ "fd", pattern })
+--         vim.fn.setqflist({}, "r", {
+--             title = "fd: " .. pattern,
+--             lines = output,
+--             efm = "%f",
+--         })
+--         vim.cmd("copen")
+--     end)
+-- end)
+--

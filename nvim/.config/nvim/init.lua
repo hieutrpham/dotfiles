@@ -19,7 +19,7 @@ require("lazy").setup({
 	"tpope/vim-obsession",
 	"mbbill/undotree",
 	require("plugins.neogit"),
-	require("plugins.fzf"),
+	-- require("plugins.fzf"),
 	require("plugins.compile"),
 	require("kickstart.plugins.gitsigns"),
 	-- require("plugins.whichkey"),

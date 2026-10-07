@@ -41,8 +41,7 @@ end
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias v='~/thirdparty/nvim-linux-x86_64.appimage'
-alias nv='NVIM_APPNAME=nvim_mini nvim'
+alias v="nvim"
 alias gs="git status"
 alias ga="git add ."
 alias gc="git commit -m"
