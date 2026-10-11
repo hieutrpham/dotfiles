@@ -10,6 +10,7 @@ vim.o.smartcase = true
 vim.o.confirm = true
 vim.o.autocomplete = true
 vim.o.autoindent = true
+vim.o.smartindent = true
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.tabstop = 4
@@ -46,7 +47,7 @@ vim.keymap.set("n", "<C-k>", "<C-w>k")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
 
 -- :colorscheme
-vim.pack.add { { src = 'https://github.com/rose-pine/neovim', version = 'main' } }
+vim.pack.add { { src = 'https://github.com/rose-pine/neovim', name = 'rose-pine', version = 'main' } }
 require("rose-pine").setup({ styles = { bold = true, italic = false } })
 vim.cmd.colorscheme("rose-pine")
 
@@ -54,6 +55,7 @@ vim.cmd.colorscheme("rose-pine")
 vim.pack.add { { src = 'https://github.com/ibhagwan/fzf-lua', version = 'main' } }
 vim.keymap.set('n', '<leader>f', '<cmd>FzfLua files<cr>')
 vim.keymap.set('n', '<leader>sr', '<cmd>FzfLua resume<cr>')
+vim.keymap.set('n', '<leader>sw', '<cmd>FzfLua grep_visual<cr>')
 vim.keymap.set('n', '<leader>b', '<cmd>FzfLua buffers<cr>')
 vim.keymap.set('n', '<leader>g', '<cmd>FzfLua live_grep_native<cr><c-g>')
 vim.keymap.set('n', '<leader>/', '<cmd>FzfLua grep_curbuf<cr>')
