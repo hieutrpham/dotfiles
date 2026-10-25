@@ -8,7 +8,7 @@ vim.o.splitright = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.confirm = true
-vim.o.autocomplete = true
+vim.o.autocomplete = false
 vim.o.autoindent = true
 vim.o.smartindent = true
 vim.o.number = true
@@ -35,6 +35,8 @@ vim.keymap.set("n", "<leader>q", ":q<cr>")
 vim.keymap.set("n", "<leader>e", ":Rex<cr>")
 vim.keymap.set("n", "<leader>E", ":Ex<cr>")
 vim.keymap.set("n", "<leader>c", ":ccl<cr>")
+vim.keymap.set("n", "<leader>n", ":cnext<cr>")
+vim.keymap.set("n", "<leader>p", ":cprev<cr>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
@@ -55,7 +57,7 @@ vim.cmd.colorscheme("rose-pine")
 vim.pack.add { { src = 'https://github.com/ibhagwan/fzf-lua', version = 'main' } }
 vim.keymap.set('n', '<leader>f', '<cmd>FzfLua files<cr>')
 vim.keymap.set('n', '<leader>sr', '<cmd>FzfLua resume<cr>')
-vim.keymap.set('n', '<leader>sw', '<cmd>FzfLua grep_visual<cr>')
+vim.keymap.set('n', '<leader>sw', '<cmd>FzfLua grep_cword<cr>')
 vim.keymap.set('n', '<leader>b', '<cmd>FzfLua buffers<cr>')
 vim.keymap.set('n', '<leader>g', '<cmd>FzfLua live_grep_native<cr><c-g>')
 vim.keymap.set('n', '<leader>/', '<cmd>FzfLua grep_curbuf<cr>')
@@ -63,3 +65,17 @@ vim.keymap.set('n', '<leader>/', '<cmd>FzfLua grep_curbuf<cr>')
 require("autocommands")
 require("statusline")
 require("treesitter")
+
+-- Define custom highlight colors
+vim.api.nvim_set_hl(0, "CustomTodo", { fg = "#00aaaa", bg = "NONE", bold = true })
+vim.api.nvim_set_hl(0, "CustomNote", { fg = "#00aa00", bg = "NONE", bold = true })
+vim.api.nvim_set_hl(0, "CustomBug", { fg = "#aa0000", bg = "NONE", bold = true })
+
+-- Create an autocmd to match tags in comments
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+    callback = function()
+        vim.fn.matchadd("CustomTodo", "\\v<(TODO)>")
+        vim.fn.matchadd("CustomNote", "\\v<(NOTE)>")
+        vim.fn.matchadd("CustomBug", "\\v<(BUG)>")
+    end,
+})
